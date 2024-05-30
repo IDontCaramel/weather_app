@@ -23,7 +23,7 @@ namespace weatherApp
         {
             int x = e.X;
             int y = e.Y;
-
+            MessageBox.Show($"{x}, {y}");
             double geschaaldeX = SchaalNaarLandKaart(x, 705, 52.3295182);
             double geschaaldeY = SchaalNaarLandKaart(y, 416, 4.9227935);
 
@@ -32,13 +32,22 @@ namespace weatherApp
 
         private double SchaalNaarLandKaart(int waarde, int oorspronkelijkeMax, double landMapMax)
         {
-            double oorspronkelijkeBereik = oorspronkelijkeMax - 0; // Minimumwaarde is altijd 0 voor de PictureBox
-            double landMapBereik = landMapMax - 0;
+            // Bepaal de juiste schalingsfactoren op basis van de voorbeelden die je hebt gegeven
+            double minX = 787;
+            double maxX = 941;
+            double minY = 214;
+            double maxY = 776;
+            double landMapMinX = 52.4938392;
+            double landMapMaxX = 53.241352;
+            double landMapMinY = 5.4383556;
+            double landMapMaxY = 6.5358827;
 
-            // Schaal de waarde naar de landkaart
-            double geschaaldeWaarde = (waarde * landMapBereik) / oorspronkelijkeBereik;
+            // Schaal de waarde naar de landkaart voor zowel x als y coördinaten
+            double geschaaldeX = landMapMinX + (waarde - minX) * (landMapMaxX - landMapMinX) / (maxX - minX);
+            double geschaaldeY = landMapMinY + (waarde - minY) * (landMapMaxY - landMapMinY) / (maxY - minY);
 
-            return geschaaldeWaarde;
+            return geschaaldeX;
         }
+
     }
 }
