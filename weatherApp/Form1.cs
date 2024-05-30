@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace weatherApp
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Forms
     {
         public Form1()
         {
