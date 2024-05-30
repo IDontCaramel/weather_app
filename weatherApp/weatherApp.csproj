@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +47,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -51,6 +55,10 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getandsave.cs" />
+    <Compile Include="main window.xaml.cs">
+      <DependentUpon>main window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +83,140 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="main window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imgs\PNG\barometer.png" />
+    <Content Include="imgs\PNG\celsius.png" />
+    <Content Include="imgs\PNG\cloud-down.png" />
+    <Content Include="imgs\PNG\cloud-fog.png" />
+    <Content Include="imgs\PNG\cloud-rain-single.png" />
+    <Content Include="imgs\PNG\cloud-rain.png" />
+    <Content Include="imgs\PNG\cloud-snow-single.png" />
+    <Content Include="imgs\PNG\cloud-snow.png" />
+    <Content Include="imgs\PNG\cloud-up.png" />
+    <Content Include="imgs\PNG\cloud-wind.png" />
+    <Content Include="imgs\PNG\cloud.png" />
+    <Content Include="imgs\PNG\clouds.png" />
+    <Content Include="imgs\PNG\compass-east.png" />
+    <Content Include="imgs\PNG\compass-north-east.png" />
+    <Content Include="imgs\PNG\compass-north-west.png" />
+    <Content Include="imgs\PNG\compass-north.png" />
+    <Content Include="imgs\PNG\compass-south-east.png" />
+    <Content Include="imgs\PNG\compass-south-west.png" />
+    <Content Include="imgs\PNG\compass-south.png" />
+    <Content Include="imgs\PNG\compass-west.png" />
+    <Content Include="imgs\PNG\compass.png" />
+    <Content Include="imgs\PNG\fahrenheit.png" />
+    <Content Include="imgs\PNG\fog.png" />
+    <Content Include="imgs\PNG\hail.png" />
+    <Content Include="imgs\PNG\lightning.png" />
+    <Content Include="imgs\PNG\moon-cloud-lightning.png" />
+    <Content Include="imgs\PNG\moon-cloud-rain.png" />
+    <Content Include="imgs\PNG\moon-cloud-snow.png" />
+    <Content Include="imgs\PNG\moon-cloud-wind.png" />
+    <Content Include="imgs\PNG\moon-cloud.png" />
+    <Content Include="imgs\PNG\moon-first-quarter.png" />
+    <Content Include="imgs\PNG\moon-fog.png" />
+    <Content Include="imgs\PNG\moon-fullmoon.png" />
+    <Content Include="imgs\PNG\moon-last-quarter.png" />
+    <Content Include="imgs\PNG\moon-newmoon.png" />
+    <Content Include="imgs\PNG\moon-waning-crescent.png" />
+    <Content Include="imgs\PNG\moon-waning-gibbous.png" />
+    <Content Include="imgs\PNG\moon-waxing-crescent.png" />
+    <Content Include="imgs\PNG\moon-waxing-gibbous.png" />
+    <Content Include="imgs\PNG\moon.png" />
+    <Content Include="imgs\PNG\rainbow.png" />
+    <Content Include="imgs\PNG\raindrop.png" />
+    <Content Include="imgs\PNG\refresh.png" />
+    <Content Include="imgs\PNG\snowflake.png" />
+    <Content Include="imgs\PNG\sun-cloud-lightning.png" />
+    <Content Include="imgs\PNG\sun-cloud-rain.png" />
+    <Content Include="imgs\PNG\sun-cloud-snow.png" />
+    <Content Include="imgs\PNG\sun-cloud-wind.png" />
+    <Content Include="imgs\PNG\sun-cloud.png" />
+    <Content Include="imgs\PNG\sun-fog.png" />
+    <Content Include="imgs\PNG\sun-low.png" />
+    <Content Include="imgs\PNG\sun-medium.png" />
+    <Content Include="imgs\PNG\sun.png" />
+    <Content Include="imgs\PNG\sunrise.png" />
+    <Content Include="imgs\PNG\sunset.png" />
+    <Content Include="imgs\PNG\thermometer-cold.png" />
+    <Content Include="imgs\PNG\thermometer-hot.png" />
+    <Content Include="imgs\PNG\thermometer-medium.png" />
+    <Content Include="imgs\PNG\tornado.png" />
+    <Content Include="imgs\PNG\umbrella.png" />
+    <Content Include="imgs\PNG\wind-high.png" />
+    <Content Include="imgs\PNG\wind.png" />
+    <Content Include="imgs\PNG\windsock.png" />
+    <Content Include="imgs\SVG\barometer.svg" />
+    <Content Include="imgs\SVG\celsius.svg" />
+    <Content Include="imgs\SVG\cloud-down.svg" />
+    <Content Include="imgs\SVG\cloud-fog.svg" />
+    <Content Include="imgs\SVG\cloud-rain-single.svg" />
+    <Content Include="imgs\SVG\cloud-rain.svg" />
+    <Content Include="imgs\SVG\cloud-snow-single.svg" />
+    <Content Include="imgs\SVG\cloud-snow.svg" />
+    <Content Include="imgs\SVG\cloud-up.svg" />
+    <Content Include="imgs\SVG\cloud-wind.svg" />
+    <Content Include="imgs\SVG\cloud.svg" />
+    <Content Include="imgs\SVG\clouds.svg" />
+    <Content Include="imgs\SVG\compass-east.svg" />
+    <Content Include="imgs\SVG\compass-north-east.svg" />
+    <Content Include="imgs\SVG\compass-north-west.svg" />
+    <Content Include="imgs\SVG\compass-north.svg" />
+    <Content Include="imgs\SVG\compass-south-east.svg" />
+    <Content Include="imgs\SVG\compass-south-west.svg" />
+    <Content Include="imgs\SVG\compass-south.svg" />
+    <Content Include="imgs\SVG\compass-west.svg" />
+    <Content Include="imgs\SVG\compass.svg" />
+    <Content Include="imgs\SVG\fahrenheit.svg" />
+    <Content Include="imgs\SVG\fog.svg" />
+    <Content Include="imgs\SVG\hail.svg" />
+    <Content Include="imgs\SVG\lightning.svg" />
+    <Content Include="imgs\SVG\moon-cloud-lightning.svg" />
+    <Content Include="imgs\SVG\moon-cloud-rain.svg" />
+    <Content Include="imgs\SVG\moon-cloud-snow.svg" />
+    <Content Include="imgs\SVG\moon-cloud-wind.svg" />
+    <Content Include="imgs\SVG\moon-cloud.svg" />
+    <Content Include="imgs\SVG\moon-first-quarter.svg" />
+    <Content Include="imgs\SVG\moon-fog.svg" />
+    <Content Include="imgs\SVG\moon-fullmoon.svg" />
+    <Content Include="imgs\SVG\moon-last-quarter.svg" />
+    <Content Include="imgs\SVG\moon-newmoon.svg" />
+    <Content Include="imgs\SVG\moon-waning-crescent.svg" />
+    <Content Include="imgs\SVG\moon-waning-gibbous.svg" />
+    <Content Include="imgs\SVG\moon-waxing-crescent.svg" />
+    <Content Include="imgs\SVG\moon-waxing-gibbous.svg" />
+    <Content Include="imgs\SVG\moon.svg" />
+    <Content Include="imgs\SVG\rainbow.svg" />
+    <Content Include="imgs\SVG\raindrop.svg" />
+    <Content Include="imgs\SVG\refresh.svg" />
+    <Content Include="imgs\SVG\snowflake.svg" />
+    <Content Include="imgs\SVG\sun-cloud-lightning.svg" />
+    <Content Include="imgs\SVG\sun-cloud-rain.svg" />
+    <Content Include="imgs\SVG\sun-cloud-snow.svg" />
+    <Content Include="imgs\SVG\sun-cloud-wind.svg" />
+    <Content Include="imgs\SVG\sun-cloud.svg" />
+    <Content Include="imgs\SVG\sun-fog.svg" />
+    <Content Include="imgs\SVG\sun-low.svg" />
+    <Content Include="imgs\SVG\sun-medium.svg" />
+    <Content Include="imgs\SVG\sun.svg" />
+    <Content Include="imgs\SVG\sunrise.svg" />
+    <Content Include="imgs\SVG\sunset.svg" />
+    <Content Include="imgs\SVG\thermometer-cold.svg" />
+    <Content Include="imgs\SVG\thermometer-hot.svg" />
+    <Content Include="imgs\SVG\thermometer-medium.svg" />
+    <Content Include="imgs\SVG\tornado.svg" />
+    <Content Include="imgs\SVG\umbrella.svg" />
+    <Content Include="imgs\SVG\wind-high.svg" />
+    <Content Include="imgs\SVG\wind.svg" />
+    <Content Include="imgs\SVG\windsock.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
