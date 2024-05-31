@@ -106,23 +106,33 @@ namespace weatherApp
         }
 
 
-        public static async Task FetchWeatherData(string apiKey)
+        public static async Task<bool> FetchWeatherData(string apiKey, string place)
         {
             using (HttpClient client = new HttpClient())
             {
-                string url = $"https://weerlive.nl/api/weerlive_api_v2.php?key={apiKey}&locatie=ede";
-                HttpResponseMessage response = await client.GetAsync(url);
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    string json = await response.Content.ReadAsStringAsync();
-                    Root weatherRoot = JsonConvert.DeserializeObject<Root>(json);
-                    if (weatherRoot != null && weatherRoot.liveweer.Count > 0)
+                    string url = $"https://weerlive.nl/api/weerlive_api_v2.php?key={apiKey}&locatie={place}";
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    if (response.IsSuccessStatusCode)
                     {
-                        LiveWeather = weatherRoot.liveweer[0];
-                        WeeklyForecast = weatherRoot.wk_verw;
-                        HourlyForecasts = weatherRoot.uur_verw;
+                        string json = await response.Content.ReadAsStringAsync();
+                        Root weatherRoot = JsonConvert.DeserializeObject<Root>(json);
+                        if (weatherRoot != null && weatherRoot.liveweer.Count > 0)
+                        {
+                            LiveWeather = weatherRoot.liveweer[0];
+                            WeeklyForecast = weatherRoot.wk_verw;
+                            HourlyForecasts = weatherRoot.uur_verw;
+                            return true; // Data fetched successfully
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    // Handle or log the exception as needed
+                    Console.WriteLine("Error fetching weather data: " + ex.Message);
+                }
+                return false; // Request failed or data was invalid
             }
         }
 

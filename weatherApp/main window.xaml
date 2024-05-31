@@ -7,14 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid Background="White">
-        <Label Content="99" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" FontSize="300" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="787,501,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1002,501,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
-        <Label Content="01/99" HorizontalAlignment="Center" Margin="0,507,0,0" VerticalAlignment="Top" FontSize="120" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <Rectangle HorizontalAlignment="Center" Height="112" Margin="0,694,0,0" Stroke="Black" VerticalAlignment="Top" Width="705">
+        <Label x:Name="temp" Content="99" HorizontalAlignment="Center" Margin="0,98,0,0" VerticalAlignment="Top" FontSize="300" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="787,453,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1002,453,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Label x:Name="tempMinMax" Content="01/99" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="120" FontFamily="Century Gothic" FontWeight="Bold" Margin="0,459,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="112" Margin="0,646,0,0" Stroke="Black" VerticalAlignment="Top" Width="704">
 
         </Rectangle>
-        <Grid HorizontalAlignment="Center" Height="111" Margin="0,695,0,0" VerticalAlignment="Top" Width="684">
+        <Grid HorizontalAlignment="Center" Height="111" Margin="0,647,0,0" VerticalAlignment="Top" Width="684">
             <Label x:Name="tempList1" Content="99" HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Top" FontSize="60" FontFamily="Century Gothic" Height="71"/>
             <Label x:Name="timeList1" Content="13:00" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Century Gothic" Height="47"/>
             <Label x:Name="tempList2" Content="99" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Top" FontSize="60" FontFamily="Century Gothic" Height="71"/>
@@ -33,7 +33,7 @@
             <Label x:Name="timeList8" Content="13:00" HorizontalAlignment="Left" Margin="599,64,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Century Gothic" Height="47"/>
 
         </Grid>
-        <TextBox HorizontalAlignment="Left" Margin="1725,26,0,0" TextWrapping="Wrap" Text="999" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontSize="60" TextChanged="TextBox_TextChanged" BorderBrush="Black"/>
+        <TextBox x:Name="inputDelay" HorizontalAlignment="Left" Margin="1725,26,0,0" TextWrapping="Wrap" Text="999" VerticalAlignment="Top" Width="108" FontFamily="Century Gothic" FontSize="60" TextChanged="TextBox_TextChanged" BorderBrush="Black"/>
         <Button x:Name="delayUp" Content="^" HorizontalAlignment="Left" Margin="1849,26,0,0" VerticalAlignment="Top" Height="40" Width="40" FontWeight="Bold" FontSize="36"/>
         <Button x:Name="delayDown" Content="^" HorizontalAlignment="Left" Margin="1849,66,0,0" VerticalAlignment="Top" Height="40" Width="40" FontWeight="Bold" FontSize="36" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
@@ -46,11 +46,11 @@
             </Button.RenderTransform>
         </Button>
         <Label Content="refresh delay(min)" HorizontalAlignment="Left" Margin="1232,12,0,0" VerticalAlignment="Top" FontSize="60"/>
-        <Button Content="MAP" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="60" Height="118"/>
-        <Label Content="celcius" HorizontalAlignment="Center" Margin="0,488,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="22" Padding="0,0,0,0"/>
+        <Button x:Name="btnMap" Content="MAP" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="60" Height="118"/>
+        <Label Content="celcius" HorizontalAlignment="Center" Margin="0,440,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="22" Padding="0,0,0,0"/>
 
 
-        <Grid HorizontalAlignment="Left" Height="136" Margin="748,838,0,0" VerticalAlignment="Top" Width="101">
+        <Grid HorizontalAlignment="Left" Height="136" Margin="748,790,0,0" VerticalAlignment="Top" Width="101">
             <Label x:Name="dailyTemp1" Content="01/99" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="34"/>
             <Rectangle HorizontalAlignment="Left" Height="24" Margin="55,74,0,0" Stroke="Black" VerticalAlignment="Top" Width="2"/>
             <Label x:Name="dailyRain1" Content="70%" HorizontalAlignment="Left" Margin="32,42,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="26"/>
@@ -65,7 +65,7 @@
                 </Label.RenderTransform>
             </Label>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="136" Margin="854,838,0,0" VerticalAlignment="Top" Width="101">
+        <Grid HorizontalAlignment="Left" Height="136" Margin="854,790,0,0" VerticalAlignment="Top" Width="101">
             <Label x:Name="dailyTemp2" Content="01/99" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="34"/>
             <Rectangle HorizontalAlignment="Left" Height="24" Margin="55,74,0,0" Stroke="Black" VerticalAlignment="Top" Width="2"/>
             <Label x:Name="dailyRain2" Content="70%" HorizontalAlignment="Left" Margin="32,42,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="26"/>
@@ -80,7 +80,7 @@
                 </Label.RenderTransform>
             </Label>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="136" Margin="960,838,0,0" VerticalAlignment="Top" Width="101">
+        <Grid HorizontalAlignment="Left" Height="136" Margin="960,790,0,0" VerticalAlignment="Top" Width="101">
             <Label x:Name="dailyTemp3" Content="01/99" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="34"/>
             <Rectangle HorizontalAlignment="Left" Height="24" Margin="55,74,0,0" Stroke="Black" VerticalAlignment="Top" Width="2"/>
             <Label x:Name="dailyRain3" Content="70%" HorizontalAlignment="Left" Margin="32,42,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="26"/>
@@ -95,7 +95,7 @@
                 </Label.RenderTransform>
             </Label>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="136" Margin="1066,838,0,0" VerticalAlignment="Top" Width="101">
+        <Grid HorizontalAlignment="Left" Height="136" Margin="1066,790,0,0" VerticalAlignment="Top" Width="101">
             <Label x:Name="dailyTemp4" Content="01/99" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="34"/>
             <Rectangle HorizontalAlignment="Left" Height="24" Margin="55,74,0,0" Stroke="Black" VerticalAlignment="Top" Width="2"/>
             <Label x:Name="dailyRain4" Content="70%" HorizontalAlignment="Left" Margin="32,42,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontFamily="Century Gothic" FontSize="26"/>
@@ -110,6 +110,8 @@
                 </Label.RenderTransform>
             </Label>
         </Grid>
+        <TextBox x:Name="inputPlace" HorizontalAlignment="Left" Margin="608,994,0,0" TextWrapping="Wrap" Text="Amsterdam" VerticalAlignment="Top" Width="564" FontFamily="Century Gothic" FontSize="40"/>
+        <Button x:Name="btnSearch" Content="search" HorizontalAlignment="Left" Margin="1177,993,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="40"/>
 
 
     </Grid>
