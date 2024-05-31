@@ -16,7 +16,7 @@ namespace weatherApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NederlandKaart());
+            Application.Run(new Form1());
         }
     }
 }
