@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace weatherApp
 {
-    public partial class NederlandKaart : Form
+    public partial class Form1 : Form
     {
         // Lijst van steden met hun geografische coördinaten
         private Dictionary<string, Point> stadCoördinaten = new Dictionary<string, Point>()
@@ -31,7 +31,7 @@ namespace weatherApp
         public float XScale =(0.00698269f);
         public float YScale = (0.13281604f);
 
-        public NederlandKaart()
+        public Form1()
         {
             InitializeComponent();
             this.pictureBox1.MouseClick += new MouseEventHandler(this.pictureBox1_MouseClick);
