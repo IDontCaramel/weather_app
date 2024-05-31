@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace blank_wpf_app
+namespace weatherApp
 {
 
     public class WeatherData
